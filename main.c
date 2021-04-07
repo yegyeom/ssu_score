@@ -21,15 +21,15 @@ int main(int argc, char *argv[])
 	exit(0);
 }
 
-void ssu_runtime(struct timeval *begin_t, struct timeval *end_t) //tv_sec는 초 tv_usec는 마이크로초를 저장
+void ssu_runtime(struct timeval *begin_t, struct timeval *end_t)
 {
 	end_t->tv_sec -= begin_t->tv_sec; 
 
 	if(end_t->tv_usec < begin_t->tv_usec){ //시작 시간의 수가 더 크면
 		end_t->tv_sec--; //end_t->tv_sec 감소
-		end_t->tv_usec += SECOND_TO_MICRO; //마이크로 초 단위에 1000000더함
+		end_t->tv_usec += SECOND_TO_MICRO; 
 	}
-	//실행 시간 계산
+
 	end_t->tv_usec -= begin_t->tv_usec; 
-	printf("Runtime: %ld:%06ld(sec:usec)\n", end_t->tv_sec, end_t->tv_usec); //runtime 초단위:마이크로초단위로 출력
+	printf("Runtime: %ld:%06ld(sec:usec)\n", end_t->tv_sec, end_t->tv_usec); //microsecond
 }
