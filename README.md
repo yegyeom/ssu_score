@@ -6,4 +6,3 @@
       2. cd LSP_score
       3. make
       4. ./ssu_score <STD_DIR> <ANS_DIR> [OPTION]
-      5. 프롬프트에서 필요한 명령어 입력 (usage 필요 시 아무키나 입력)
